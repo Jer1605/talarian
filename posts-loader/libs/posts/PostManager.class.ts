@@ -3,8 +3,6 @@ import { retryRequest } from '../common/retryRequest.ts';
 import { Post, ObjectResult, Media, User } from '../../entities/posts.types.ts';
 import { CacheService } from '../services/cache.service.ts';
 
-
-console.log(import.meta.env.POSTS_API_BASE_URL)
 /**
  * Class responsible for managing posts.
  * Handles fetching posts from the API, retry logic, and caching.
