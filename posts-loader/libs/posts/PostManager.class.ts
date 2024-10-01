@@ -3,6 +3,8 @@ import { retryRequest } from '../common/retryRequest.ts';
 import { Post, ObjectResult, Media, User } from '../../entities/posts.types.ts';
 import { CacheService } from '../services/cache.service.ts';
 
+
+console.log(import.meta.env.POSTS_API_BASE_URL)
 /**
  * Class responsible for managing posts.
  * Handles fetching posts from the API, retry logic, and caching.
@@ -12,8 +14,8 @@ export class PostsManager {
     private currentCursor: number = 0;
     private readonly limit: number = 15;
     private readonly maxRetries: number = 5;
-    private readonly BASE_URL: string = 'https://apis.slstice.com/mock';
-    private readonly API_KEY: string = 'ZSTYF0GBSSF0l3Ou6DTPE';
+    private readonly BASE_URL: string = import.meta.env.VITE_POSTS_API_BASE_URL;
+    private readonly API_KEY: string = import.meta.env.VITE_POSTS_API_API_KEY;
 
     /**
      * @constructor
